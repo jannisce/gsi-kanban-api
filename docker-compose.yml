@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: kanban-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/api
+      - ./data:/api/data
+    environment:
+      - DATABASE_URL=sqlite:////api/data/kanban.db
